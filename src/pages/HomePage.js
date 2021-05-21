@@ -4,7 +4,7 @@ import NavCard from '../component/NavCard';
 const HomePage = () => {
   return (
     <div className="container">
-      <div className="d-flex flex-wrap ">
+      <div className="d-flex flex-wrap justify-content-center ">
         <NavCard />
       </div>
     </div>

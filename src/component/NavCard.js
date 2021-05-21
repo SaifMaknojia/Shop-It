@@ -2,13 +2,12 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { productCategory } from '../redux/actions/actions';
-import ProductCard from './ProductCard';
 
-const NavCard = ({ value }) => {
+const NavCard = () => {
   const style = {
     height: '250px',
     width: '18rem',
-    maxWidth: '25rem',
+    maxWidth: '30rem',
     padding: '25px',
     margin: '25px'
   };
@@ -36,7 +35,7 @@ const NavCard = ({ value }) => {
           className="nav-card border flex-grow d-flex flex-column justify-content-evenly"
           style={style}
         >
-          <h2>{item}</h2>
+          <h2>{item.charAt(0).toUpperCase() + item.slice(1)}</h2>
           <button className="btn btn-primary">Shop Now</button>
         </div>
       ))}
