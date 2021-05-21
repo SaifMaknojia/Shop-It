@@ -1,27 +1,57 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
+import { productList } from '../redux/actions/actions';
+import { Link } from 'react-router-dom';
 
+/*  */
 const ProductCard = () => {
+  const products = useSelector(state => state.allProducts.products);
+  const dispatch = useDispatch();
+
+  //calling data from api
+  const fetchProducts = async () => {
+    const res = await axios
+      .get('https://fakestoreapi.com/products')
+      .then(res => res.data)
+      .catch(err => console.log(`Err: ${err}`));
+
+    //storing data in redux state
+    dispatch(productList(res));
+  };
+
+  //storing data in react lifecycle hook
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  console.log(products);
+
   return (
-    <div className="container">
-      <div className="card" style={{ width: '18rem' }}>
-        <img
-          src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvbmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-          className="card-img-top"
-          alt="..."
-        />
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <h6>$4.99</h6>
-          <a href="/product/:id" className="btn btn-primary">
-            Go somewhere
-          </a>
+    <>
+      {products.map(product => (
+        <div
+          key={product.id}
+          className="card mx-2 my-4 custom-card d-flex card-image justify-content-between"
+        >
+          <img
+            className="card-img-top card-image p-3"
+            style={{ height: '18rem' }}
+            src={product.image}
+            alt={product.title}
+          />
+          <div className="card-body d-flex flex-column justify-content-between">
+            <h5 className="card-title">{product.title}</h5>
+            <div>
+              <p className="card-text">$ {product.price}</p>
+              <Link to="/cart" className="btn btn-primary">
+                Add To Cart
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      ))}
+    </>
   );
 };
 

@@ -1,30 +1,41 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
       <div className="d-flex container justify-content-between align-items-center">
         <div className="">
-          <a className="navbar-brand" href="">
-            Shop It
-          </a>
+          <Link className="underline" to="/">
+            <p className="navbar-brand nav-item">Shop It</p>
+          </Link>
         </div>
-        <ul className="navbar-nav d-flex flex-row">
-          <li className="nav-item">
-            <a className="nav-link text-white" aria-current="page" href="">
-              Shop
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link text-white ms-3" href="">
-              Contact Us
-            </a>
-          </li>
-          <li className="nav-item ">
-            <a className="nav-link text-white ms-3 me-3" href="">
-              Sign In
-            </a>
-          </li>
+        <ul className="navbar-nav d-flex flex-row me-3">
+          <Link className="underline" to="/shop">
+            <li className="nav-item">
+              <p className="nav-link text-white ms-3" aria-current="page">
+                Shop
+              </p>
+            </li>
+          </Link>
+
+          <Link className="underline" to="/signin">
+            <li className="nav-item ">
+              <p className="nav-link text-white ms-3 me-2">Sign In</p>
+            </li>
+          </Link>
+
+          <Link className="underline" to="/cart">
+            <li className="nav-item d-flex justify-content-between">
+              <p className="nav-link text-white ms-2">
+                <span>
+                  <FaShoppingCart className="me-1 pb-1" />
+                </span>
+                Cart
+              </p>
+            </li>
+          </Link>
         </ul>
       </div>
     </nav>
