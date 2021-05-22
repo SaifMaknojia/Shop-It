@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
+import SignInWithGoogle from './SignInWithGoogle';
 
 const SignIn = () => {
   const style = {
@@ -7,12 +8,16 @@ const SignIn = () => {
     maxWidth: '600px'
   };
 
+  const buttonStyle = {
+    width: '200px'
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
   };
 
   return (
-    <Container style={style} className="mb-5">
+    <Container style={style} className="mb-5 flex-grow me-5">
       <h2>Please Sign In</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail1">
@@ -27,10 +32,17 @@ const SignIn = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-
-        <Button variant="primary" type="submit" className="mt-4">
-          Sign In
-        </Button>
+        <div className="d-flex justify-content-evenly">
+          <Button
+            variant="primary"
+            type="submit"
+            className="mt-4 me-5 "
+            style={buttonStyle}
+          >
+            Sign In
+          </Button>
+          <SignInWithGoogle />
+        </div>
       </Form>
     </Container>
   );

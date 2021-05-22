@@ -11,7 +11,7 @@ const RegisterForm = () => {
     e.preventDefault();
   };
   return (
-    <Container style={style} className=" mb-5">
+    <Container style={style} className="flex-grow mb-5">
       <h3>Register</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
