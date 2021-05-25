@@ -28,7 +28,10 @@ const ProductCard = () => {
   return (
     <>
       {products.map(product => (
-        <div className="card mx-2 my-4 custom-card d-flex card-image justify-content-between">
+        <div
+          className="card mx-2 my-4 custom-card d-flex card-image justify-content-between"
+          key={product.id}
+        >
           <Link key={product.id} to={`/shop/${product.id}`}>
             <img
               className="card-img-top card-image p-3"
