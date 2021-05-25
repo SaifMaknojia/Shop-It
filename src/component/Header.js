@@ -8,13 +8,13 @@ const Header = () => {
       <div className="d-flex container justify-content-between align-items-center">
         <div className="">
           <Link className="underline" to="/">
-            <p className="navbar-brand nav-item">Shop It</p>
+            <p className="navbar-brand fs-4 nav-item">Shop It</p>
           </Link>
         </div>
         <ul className="navbar-nav d-flex flex-row me-3">
           <Link className="underline" to="/shop">
             <li className="nav-item">
-              <p className="nav-link text-white ms-3" aria-current="page">
+              <p className="nav-link text-white fs-4 ms-3" aria-current="page">
                 Shop
               </p>
             </li>
@@ -22,13 +22,13 @@ const Header = () => {
 
           <Link className="underline" to="/signin">
             <li className="nav-item ">
-              <p className="nav-link text-white ms-3 me-2">Sign In</p>
+              <p className="nav-link fs-4 text-white ms-3 me-2">Sign In</p>
             </li>
           </Link>
 
           <Link className="underline" to="/cart">
             <li className="nav-item d-flex justify-content-between">
-              <p className="nav-link text-white ms-2">
+              <p className="nav-link text-white fs-4 ms-2">
                 <span>
                   <FaShoppingCart className="me-1 pb-1" />
                 </span>

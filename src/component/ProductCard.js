@@ -25,21 +25,18 @@ const ProductCard = () => {
     fetchProducts();
   }, []);
 
-  console.log(products);
-
   return (
     <>
       {products.map(product => (
-        <div
-          key={product.id}
-          className="card mx-2 my-4 custom-card d-flex card-image justify-content-between"
-        >
-          <img
-            className="card-img-top card-image p-3"
-            style={{ height: '18rem' }}
-            src={product.image}
-            alt={product.title}
-          />
+        <div className="card mx-2 my-4 custom-card d-flex card-image justify-content-between">
+          <Link key={product.id} to={`/shop/${product.id}`}>
+            <img
+              className="card-img-top card-image p-3"
+              style={{ height: '18rem' }}
+              src={product.image}
+              alt={product.title}
+            />
+          </Link>
           <div className="card-body d-flex flex-column justify-content-between">
             <h5 className="card-title">{product.title}</h5>
             <div>

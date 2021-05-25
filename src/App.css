@@ -9,12 +9,9 @@ flex-grow: 1;
 .card-image{
 width: 80%;
 object-fit: contain;
-
 }
 
-
-
-
+/* media queries */
 @media (min-width: 560px) { 
 .card-image {
 width: 15rem;
@@ -25,21 +22,18 @@ justify-content: space-between;
 
 
 @media (min-width: 768px) { 
-
 .card-image {
 width: 18rem;
 max-width: 20rem;
 flex-grow: 1;
 }
-
-
-
  }
 
-
-
+  
 /* NavCard */
 .nav-card {
 width: 18rem;
 border: 1px solid light-gray;
 }
+
+/* SingleProduct */
