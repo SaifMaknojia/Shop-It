@@ -20,3 +20,10 @@ export const productCategory = category => {
     payload: category
   };
 };
+
+export const productCategoryItem = categoryItem => {
+  return {
+    type: 'PRODUCT_CATEGORY_ITEM',
+    payload: categoryItem
+  };
+};

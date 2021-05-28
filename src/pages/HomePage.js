@@ -1,12 +1,12 @@
 import React from 'react';
-import NavCard from '../component/NavCard';
+import ProductTabs from '../component/ProductTabs';
 
 const HomePage = () => {
   return (
-    <div className="container">
-      <div className="d-flex flex-wrap justify-content-center ">
-        <NavCard />
-      </div>
+    <div className="container ">
+      {/*     <div className="d-flex flex-wrap justify-content-center"> */}
+      <ProductTabs />
+      {/*  </div> */}
     </div>
   );
 };

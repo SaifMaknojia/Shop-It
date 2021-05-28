@@ -38,7 +38,7 @@ const SingleProduct = () => {
     <div className="my-5 d-lg-flex justify-content-between" key={id}>
       <div className="d-flex justify-content-center">
         <img
-          style={{ width: '450px' }}
+          style={{ height: '400px' }}
           src={image}
           alt={title}
           className="mb-5 me-3 p-3"

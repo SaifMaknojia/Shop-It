@@ -17,7 +17,7 @@ const SignIn = () => {
   };
 
   return (
-    <Container style={style} className="mb-5 flex-grow me-5">
+    <Container style={style} className="flex-grow mb-5 me-5">
       <h2>Please Sign In</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail1">

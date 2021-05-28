@@ -37,3 +37,18 @@ border: 1px solid light-gray;
 }
 
 
+
+
+/* React Tabs */
+ .react-tabs__tab{
+border: 1px solid transparent !important;
+} 
+
+.react-tabs__tab--selected {
+
+border-bottom: 1px solid black !important;
+}
+
+.react-tabs__tab:hover {
+border-bottom:1px solid greenyellow !important;
+}
