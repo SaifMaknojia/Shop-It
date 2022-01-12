@@ -11,14 +11,14 @@ import { Link } from 'react-router-dom';
 const ProductTabs = () => {
   const style = {
     textDecoration: 'none',
-    border: 'none'
+    border: 'none',
   };
 
   return (
     <Tabs className="mt-3 ">
       <TabList
         style={style}
-        className="d-flex  overflow-scroll justify-content-evenly"
+        className="d-flex overflow-hidden justify-content-evenly"
       >
         <Tab>Electronic's</Tab>
         <Tab>Jewelleries's</Tab>
